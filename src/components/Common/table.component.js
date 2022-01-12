@@ -1,14 +1,17 @@
 import TableHeader from "./table-header.component";
 import TableBody from "./table-body.component";
 
-const Table = ({ headers, data, handleIsRated }) => {
+const Table = ({ data, handleIsRated, columns }) => {
     return (
         <div>
             <table className="table">
-                <TableHeader headers={headers} />
-                <tbody>
-                    <TableBody data={data} handleIsRated={handleIsRated} />
-                </tbody>
+                <TableHeader columns={columns} />
+                    <TableBody
+                        data={data}
+                        columns={columns}
+                        handleIsRated={handleIsRated}
+                    />
+                
             </table>
         </div>
     );

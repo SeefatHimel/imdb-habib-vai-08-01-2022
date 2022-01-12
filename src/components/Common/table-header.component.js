@@ -1,11 +1,11 @@
-const TableHeader = (props) => {
+const TableHeader = ({columns}) => {
     return (
         <thead>
             <tr>
-                {props.headers.map((item, index) => {
+                {columns.map((item, index) => {
                     return (
                         <th key={index} scope="col">
-                            {item}
+                            {item.label}
                         </th>
                     );
                 })}

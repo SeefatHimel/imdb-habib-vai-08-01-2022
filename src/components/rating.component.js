@@ -12,7 +12,7 @@ class Rating extends Component {
 
     handleHover = () => {
         this.setState({ isHovered: true });
-        console.log("hover!! ");
+        console.log(this.props.rank);
     };
     handleOut = () => {
         this.setState({ isHovered: false });
@@ -33,7 +33,7 @@ class Rating extends Component {
         return (
             <>
                 <i
-                onClick={()=> this.handleIsRated(this.rank)}
+                onClick={()=> this.props.handleIsRated(this.props.rank)}
                     onMouseOver={this.handleHover}
                     onMouseOut={this.handleOut}
                     className={this.getClassName()}

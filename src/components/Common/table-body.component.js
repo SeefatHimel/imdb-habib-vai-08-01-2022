@@ -1,14 +1,29 @@
 import Rating from "../rating.component";
 
-const TableBody = ({ data ,handleIsRated }) => {
+const TableBody = ({ data, handleIsRated, columns }) => {
+    console.log(columns);
     return (
-        <>
-            {data.map((item, index) => {
+        <tbody>
+            {
+                data.map((row,index) => {
+                    return (
+                        <tr key={index}>
+                            {
+                                columns.map(column => {
+                                    return column.content(row, column.path);
+                                })
+                            }
+                        </tr>
+                    )
+                })
+            }                  
+
+            {/* {data.map((item, index) => {
                 return (
                     <tr key={index}>
-                        <th scope="row">{item.id}</th>
+                        <th scope="row">{item.rank}</th>
 
-                        <td>{item.rankAndTitle}</td>
+                        <td>{item.title}</td>
                         <td>{item.imdbRating}</td>
                         <td>
                             <Rating
@@ -19,8 +34,8 @@ const TableBody = ({ data ,handleIsRated }) => {
                         </td>
                     </tr>
                 );
-            })}
-        </>
+            })} */}
+        </tbody>
     );
 };
 
