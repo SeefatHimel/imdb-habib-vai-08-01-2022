@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Navbar from "./components/navbar.components";
+import Movies from "./components/movies.componnt";
+// import Students from "./components/students.component";
+import Rating from "./components/rating.component"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <>
+                <div
+                // style={{ background: "grey", margin: "0px" }}
+                >
+                    <Navbar />
+
+                    <Movies />
+
+                    <Rating isRated={true} />
+
+                    {/* <Students /> */}
+                </div>
+            </>
+        );
+    }
 }
 
 export default App;
