@@ -1,4 +1,4 @@
-const TableHeader = ({columns}) => {
+const TableHeader = ({ columns }) => {
     return (
         <thead>
             <tr>
