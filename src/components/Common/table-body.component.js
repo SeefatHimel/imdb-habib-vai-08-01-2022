@@ -1,11 +1,11 @@
 import Rating from "../rating.component";
 
-const TableBody = ({ data, handleIsRated, columns }) => {
+const TableBody = ({ items, handleIsRated, columns }) => {
     console.log(columns);
     return (
         <tbody>
             {
-                data.map((row,index) => {
+                items.map((row,index) => {
                     return (
                         <tr key={index}>
                             {
@@ -18,7 +18,7 @@ const TableBody = ({ data, handleIsRated, columns }) => {
                 })
             }                  
 
-            {/* {data.map((item, index) => {
+            {/* {items.map((item, index) => {
                 return (
                     <tr key={index}>
                         <th scope="row">{item.rank}</th>
