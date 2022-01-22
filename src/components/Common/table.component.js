@@ -5,9 +5,11 @@ const Table = ({ items, handleIsRated, columns, sortColumn, onSort }) => {
     return (
         <div>
             <table className="table">
-                <TableHeader columns={columns} 
+                <TableHeader
+                    columns={columns}
                     sortColumn={sortColumn}
-                    onSort={onSort}/>
+                    onSort={onSort}
+                />
                 <TableBody
                     items={items}
                     columns={columns}
